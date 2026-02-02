@@ -1,0 +1,11 @@
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Secrets
+AgXR.App/Secrets.cs

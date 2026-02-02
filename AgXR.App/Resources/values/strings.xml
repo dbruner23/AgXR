@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AgXR Field App</string>
+    <string name="push_to_talk">Push to Talk</string>
+    <string name="permission_rationale_record_audio">Microphone access is required for Push to Talk.</string>
+</resources>

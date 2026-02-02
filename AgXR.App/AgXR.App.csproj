@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>29</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationId>com.agxr.fieldapp</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <!-- Allow unsafe for P/Invoke efficiency -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ARCore for Android Binder -->
+    <PackageReference Include="Vapolia.Google.ARCore" Version="1.47.1" />
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.12.0" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include Native Library -->
+    <AndroidLibrary Include="..\AgXR.Native\build\outputs\aar\AgXR.Native-debug.aar" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Gemini SDK -->
+    <PackageReference Include="Google_GenerativeAI" Version="2.1.4" />
+    <PackageReference Include="Google_GenerativeAI.Live" Version="2.1.4" />
+  </ItemGroup>
+</Project>

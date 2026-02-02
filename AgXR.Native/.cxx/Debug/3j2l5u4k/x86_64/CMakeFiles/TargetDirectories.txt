@@ -1,0 +1,3 @@
+C:/Users/david.bruner/Documents/DBRepos/AgXR/AgXR.Native/.cxx/Debug/3j2l5u4k/x86_64/CMakeFiles/agxr_vision.dir
+C:/Users/david.bruner/Documents/DBRepos/AgXR/AgXR.Native/.cxx/Debug/3j2l5u4k/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/david.bruner/Documents/DBRepos/AgXR/AgXR.Native/.cxx/Debug/3j2l5u4k/x86_64/CMakeFiles/rebuild_cache.dir
