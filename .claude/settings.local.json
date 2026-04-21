@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:\\\\Users\\\\david.bruner\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe\" logcat -d)",
+      "Bash(findstr:*)",
+      "Bash(\"C:\\\\Users\\\\david.bruner\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe\" logcat -c)",
+      "Bash(dotnet build:*)",
+      "Bash(\"C:\\\\Users\\\\david.bruner\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe\" install -r \"C:\\\\Users\\\\david.bruner\\\\Documents\\\\DBRepos\\\\AgXR\\\\AgXR.App\\\\bin\\\\Debug\\\\net10.0-android\\\\com.agxr.fieldapp-Signed.apk\")"
+    ]
+  }
+}

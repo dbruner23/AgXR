@@ -1,7 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0-android</TargetFramework>
+    <OutputType>Exe</OutputType>
     <SupportedOSPlatformVersion>29</SupportedOSPlatformVersion>
+    <JavaSdkDirectory>C:\Program Files\Microsoft\jdk-21.0.10.7-hotspot</JavaSdkDirectory>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationId>com.agxr.fieldapp</ApplicationId>
@@ -9,13 +11,15 @@
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <!-- Allow unsafe for P/Invoke efficiency -->
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- Fix for emulator deployment issues (Fast Deployment) -->
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
 
   <ItemGroup>
     <!-- ARCore for Android Binder -->
     <PackageReference Include="Vapolia.Google.ARCore" Version="1.47.1" />
-    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.12.0" />
-    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1" />
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.13.1.1" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,5 +31,10 @@
     <!-- Gemini SDK -->
     <PackageReference Include="Google_GenerativeAI" Version="2.1.4" />
     <PackageReference Include="Google_GenerativeAI.Live" Version="2.1.4" />
+    <!-- SQLite for local database -->
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.8" />
+    <!-- Google Play Services for GPS -->
+    <PackageReference Include="Xamarin.GooglePlayServices.Location" Version="121.1.0" />
   </ItemGroup>
 </Project>

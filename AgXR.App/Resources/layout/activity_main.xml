@@ -1,19 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Push to Talk Button -->
-    <Button
-        android:id="@+id/btnPushToTalk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:text="@string/push_to_talk"
-        android:padding="16dp"
-        android:backgroundTint="#FF6200EE"
-        android:textColor="#FFFFFF" />
+    <!-- ARCore GLSurfaceView (fills background) -->
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-</RelativeLayout>
+    <!-- AR Marker Overlay Container -->
+    <FrameLayout
+        android:id="@+id/arOverlayContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+
+    <!-- Overlay Container -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- Status Bar (top) -->
+        <LinearLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:background="#80000000"
+            android:padding="8dp"
+            android:gravity="center_vertical">
+
+            <!-- GPS Status Icon -->
+            <ImageView
+                android:id="@+id/iconGps"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_mylocation"
+                android:tint="#888888" />
+
+            <!-- GPS Coords -->
+            <TextView
+                android:id="@+id/txtGps"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="GPS: --"
+                android:textSize="12sp"
+                android:textColor="#CCCCCC" />
+
+            <!-- Status Text -->
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ready"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Response Panel (center, glassmorphism style) -->
+        <LinearLayout
+            android:id="@+id/responsePanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:background="#CC222222"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txtResponseCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#88FFFFFF"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/txtResponseAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="14sp"
+                android:textColor="#FFCC00"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Button Row (bottom) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <!-- Tag Location Button -->
+                <Button
+                    android:id="@+id/btnTagLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Tag Location"
+                    android:backgroundTint="#2196F3"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <!-- View Saved Button -->
+                <Button
+                    android:id="@+id/btnViewSaved"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Saved 📋"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="1dp" />
+
+            <!-- Push to Talk Button -->
+            <Button
+                android:id="@+id/btnPushToTalk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎤 Ask"
+                android:padding="16dp"
+                android:backgroundTint="#FF6200EE"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
